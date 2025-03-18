@@ -1,0 +1,36 @@
+<html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求解二次方程</title>
+</head>
+<body>
+    <h1>二次方程求解器</h1>
+    <script>
+        // 提示用户输入系数
+        let a = parseFloat(prompt("请输入二次方程的系数 a:"));
+        let b = parseFloat(prompt("请输入二次方程的系数 b:"));
+        let c = parseFloat(prompt("请输入二次方程的系数 c:"));
+
+        // 计算判别式 delta
+        let delta = b * b - 4 * a * c;
+
+        // 判断是否有实数解
+        if (delta >= 0) {
+            // 计算解 x1 和 x2
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+            // 提示用户结果
+            alert("方程的解是：x1 = " + x1 + ", x2 = " + x2);
+            
+            // 在控制台输出解
+            console.log("方程的解是：x1 = " + x1 + ", x2 = " + x2);
+        } else {
+            alert("方程没有实数解！");
+            console.log("方程没有实数解！");
+        }
+    </script>
+</body>
+</html>
