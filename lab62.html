@@ -1,0 +1,24 @@
+import cmath
+
+def solve_quadratic(a, b, c):
+    if a == 0:
+        return "不是二次方程"
+    
+    delta = b**2 - 4*a*c  # 计算判别式
+    
+    if delta > 0:
+        x1 = (-b + delta**0.5) / (2*a)
+        x2 = (-b - delta**0.5) / (2*a)
+        return f"两个实数解: x1 = {x1}, x2 = {x2}"
+    elif delta == 0:
+        x = -b / (2*a)
+        return f"唯一实数解: x = {x}"
+    else:
+        x1 = (-b + cmath.sqrt(delta)) / (2*a)
+        x2 = (-b - cmath.sqrt(delta)) / (2*a)
+        return f"两个复数解: x1 = {x1}, x2 = {x2}"
+
+# 示例测试
+print(solve_quadratic(1, -6, 13))  # 复数解
+print(solve_quadratic(1, -2, 1))   # 只有一个实数解
+print(solve_quadratic(1, 5, 6))    # 两个实数解
